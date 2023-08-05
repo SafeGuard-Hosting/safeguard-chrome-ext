@@ -1,0 +1,14 @@
+{
+  "name": "SafeGuard",
+  "description": "Multi-Tool Google Chrome Extension",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "home.html",
+    "default_icon": "logo.png"
+  },
+  "options_page": "/ruler/ruler.html",
+  "permissions": [
+    "activeTab"
+  ]
+}
