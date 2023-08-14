@@ -1,7 +1,35 @@
-body {
-    font-family: Arial;
+header {
+color:#62c42b;
+background:#FFF;
+font-family:Arial;
+
+
 }
 
+body {
+    font-family: Arial;
+    background: #000000;
+    width: 200%;
+}
+
+a {
+    font-family:Arial;
+    color: #000;
+
+}
+
+    a:hover {
+    color:#000;
+    }
+
+ li{
+     color:#000;
+}
+
+button {
+background:#808080;
+box-shadow:inherit;
+}
 /* Style the tab */
 .tab {
     overflow: hidden;
