@@ -5,12 +5,12 @@
   "manifest_version": 3, // Manifest version (Chrome Manifest v3)
   "action": {
     "default_popup": "index.html", // HTML file for the popup
-    "default_icon": "logo.png" // Default icon for the extension
+    "default_icon": "/assets/icons/logo.png" // Default icon for the extension
   },
   "icons": {
-    "16": "logo.png", // Icon for small size (16x16)
-    "48": "logo.png", // Icon for medium size (48x48)
-    "128": "logo.png" // Icon for large size (128x128)
+    "16": "/assets/icons/logo.png", // Icon for small size (16x16)
+    "48": "/assets/icons/logo.png", // Icon for medium size (48x48)
+    "128": "/assets/icons/logo.png" // Icon for large size (128x128)
   },
   "permissions": [
     "activeTab", // Permission to access the currently active tab
@@ -19,8 +19,18 @@
   ],
   "content_scripts": [
     {
-      "matches": ["<all_urls>"], // URLs where the content script will run
-      "js": ["/plugins/hexcode/content.js"] // JavaScript file to be injected
-    }
+      "matches": [
+        "<all_urls>"
+      ], // URLs where the content script will run
+      "js": [
+        "/plugins/hexcode/content.js"
+      ], // JavaScript file to be injected
+      "js": [
+        "/plugins/styles/content.js"
+      ], // JavaScript file to be injected
+      "js": [
+        "/plugins/volume/content.js"
+      ]
+    } // JavaScript file to be injected
   ]
 }

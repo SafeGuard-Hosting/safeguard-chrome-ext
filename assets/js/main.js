@@ -17,13 +17,13 @@ function loadTemplate(url, elementId, callback) {
 }
 
 // Load header template
-loadTemplate('/include/template/nav.html', 'nav-placeholder');
+loadTemplate('/includes/template/nav.html', 'nav-placeholder');
 
 // Load footer template
-loadTemplate('/include/template/footer.html', 'footer-placeholder');
+loadTemplate('/includes/template/footer.html', 'footer-placeholder');
 
 // Load footer template and set current year after loading
-loadTemplate('/include/template/footer.html', 'footer-placeholder', function() {
+loadTemplate('/includes/template/footer.html', 'footer-placeholder', function() {
   // Get the current year
   const currentYear = new Date().getFullYear();
 
