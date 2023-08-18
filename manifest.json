@@ -1,28 +1,26 @@
 {
-  "name": "SafeGuard",
-  "description": "Multi-Tool Google Chrome Extension for Web Development",
-  "version": "1.0",
-  "manifest_version": 3,
+  "name": "SafeGuard", // Extension name
+  "description": "Multi-Tool Google Chrome Extension for Web Development", // Extension description
+  "version": "1.0", // Extension version
+  "manifest_version": 3, // Manifest version (Chrome Manifest v3)
   "action": {
-    "default_popup": "index.html",
-    "default_icon": "logo.png"
+    "default_popup": "index.html", // HTML file for the popup
+    "default_icon": "logo.png" // Default icon for the extension
   },
-
   "icons": {
-    "16": "logo.png",
-    "48": "logo.png",
-    "128": "logo.png"
+    "16": "logo.png", // Icon for small size (16x16)
+    "48": "logo.png", // Icon for medium size (48x48)
+    "128": "logo.png" // Icon for large size (128x128)
   },
-
   "permissions": [
-    "activeTab",
-    "storage",
-    "scripting"
+    "activeTab", // Permission to access the currently active tab
+    "storage", // Permission to use the storage API
+    "scripting" // Permission to inject scripts into web pages
   ],
-
   "content_scripts": [
     {
-        "matches": ["<all_urls>"],
-        "js": ["/plugins/hexcode/content.js"]
+      "matches": ["<all_urls>"], // URLs where the content script will run
+      "js": ["/plugins/hexcode/content.js"] // JavaScript file to be injected
     }
+  ]
 }
