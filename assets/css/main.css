@@ -85,7 +85,7 @@ Header & Menu
 /* Header styles */
 
 header{
-  background-color:#333333!important;
+  background-color:#8cc34c!important;
 }
 
 /* Create two equal columns that float next to each other */
@@ -154,6 +154,9 @@ header{
   float: right;
 }
 
+.navbar-nav{
+  padding: 25px!important;
+}
 
 
 /*-------------------------------------------*\ 
@@ -165,6 +168,7 @@ Body
 
 /* Reset some default styles */
 body {
+  background-color: #f5f5f5!important;
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
@@ -176,6 +180,6 @@ body {
 .popup-container {
   margin: 0 auto; /* Center the popup horizontally */
 }
-footer{
-  
+.footer{
+  background-color: #333333!important;
 }

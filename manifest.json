@@ -18,7 +18,11 @@
     "activeTab",
     "storage",
     "scripting"
-  ]
+  ],
 
-
+  "content_scripts": [
+    {
+        "matches": ["<all_urls>"],
+        "js": ["/plugins/hexcode/content.js"]
+    }
 }
