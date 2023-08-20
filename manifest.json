@@ -1,35 +1,29 @@
 {
-  "name": "SafeGuard", // Extension name
-  "description": "Multi-Tool Google Chrome Extension for Web Development", // Extension description
-  "version": "1.0", // Extension version
-  "manifest_version": 3, // Manifest version (Chrome Manifest v3)
-  // Action to be taken when the extension icon is clicked
+  "name": "SafeGuard",
+  "description": "Multi-Tool Google Chrome Extension for Web Development",
+  "version": "1.0",
+  "manifest_version": 3,
   "action": {
-    "default_popup": "index.html", // HTML file for the popup
-    "default_icon": "/assets/icons/logo.png" // Default icon for the extension
+    "default_popup": "index.html",
+    "default_icon": "/assets/icons/logo.png"
   },
-  // Icons for different sizes
   "icons": {
-    "16": "/assets/icons/logo.png", // Icon for small size (16x16)
-    "48": "/assets/icons/logo.png", // Icon for medium size (48x48)
-    "128": "/assets/icons/logo.png" // Icon for large size (128x128)
+    "16": "/assets/icons/logo.png",
+    "48": "/assets/icons/logo.png",
+    "128": "/assets/icons/logo.png"
   },
-  // Permissions required by the extension
   "permissions": [
-    "activeTab", // Permission to access the currently active tab
-    "storage", // Permission to use the storage API
-    "scripting" // Permission to inject scripts into web pages
+    "activeTab",
+    "storage",
+    "scripting"
   ],
-  // Content scripts to be injected into specific URLs
   "content_scripts": [
     {
-      "matches": [
-        "spamurls.com"
-      ], // URLs where the content script will run
+      "matches": ["spamurls.com"],
       "js": [
-        "/plugins/hexcode/content.js", // JavaScript file to be injected
-        "/plugins/styles/content.js", // JavaScript file to be injected
-        "/plugins/volume/content.js" // JavaScript file to be injected
+        "/plugins/hexcode/content.js",
+        "/plugins/styles/content.js",
+        "/plugins/volume/content.js"
       ]
     }
   ]
