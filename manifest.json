@@ -3,28 +3,58 @@
   "description": "Multi-Tool Google Chrome Extension for Web Development",
   "version": "1.0",
   "manifest_version": 3,
-  "action": {
-    "default_popup": "index.html",
-    "default_icon": "/assets/icons/logo.png"
-  },
-  "icons": {
-    "16": "/assets/icons/logo.png",
-    "48": "/assets/icons/logo.png",
-    "128": "/assets/icons/logo.png"
-  },
+  "short_name": "SGH",
   "permissions": [
     "activeTab",
     "storage",
-    "scripting"
+    "scripting",
+    "tabs",
+    "contextMenus"
   ],
+  "web_accessible_resources": [
+    {
+      "resources": ["plugins/darkmode/css/amazon.css"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "homepage_url": "https://safeguardhosting.ca",
+  "options_ui": {
+    "page": "plugins/darkmode/options.html",
+    "open_in_tab": true
+  },
+  "offline_enabled": true,
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "assets/icons/logo.png",
+      "48": "assets/icons/logo.png",
+      "128": "assets/icons/logo.png"
+    }
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
       "js": [
-        "/plugins/hexcode/content.js",
-        "/plugins/styles/content.js",
-        "/plugins/volume/content.js"
+        "plugins/hexcode/content.js",
+        "plugins/styles/content.js",
+        "plugins/volume/content.js"
       ]
+    },
+    {
+      "all_frames": true,
+      "match_about_blank": true,
+      "matches": ["<all_urls>"],
+      "run_at": "document_start",
+      "exclude_globs": ["*/chrome/newtab*"],
+      "js": ["plugins/darkmode/js/main.js"]
+    },
+    {
+      "all_frames": true,
+      "match_about_blank": true,
+      "matches": ["<all_urls>"],
+      "run_at": "document_start",
+      "exclude_globs": ["*/chrome/newtab*"],
+      "css": ["plugins/darkmode/css/universal.css"]
     }
   ]
 }
