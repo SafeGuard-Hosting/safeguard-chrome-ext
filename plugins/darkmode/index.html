@@ -1,7 +1,19 @@
-<!doctype html>
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character set, viewport, and description -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <meta name="description" content="">
+
+    <!-- Favicon link -->
+    <link rel="icon" href="assets/icons/logo.png">
+
+    <!-- Page title -->
     <title>Dark Mode Always Extension </title>
+
+
     <link href="/plugins/darkmode/css/range-slider.css" rel="stylesheet" type="text/css">
     <link href="/plugins/darkmode/css/balloon.css" rel="stylesheet" type="text/css">
     <link href="/plugins/darkmode/css/css-popup.css" rel="stylesheet" type="text/css">
@@ -9,76 +21,86 @@
     <script src="/plugins/darkmode/js/jquery.min.js"></script>
     <script src="/plugins/darkmode/js/range-slider.min.js"></script>
     <script src="/plugins/darkmode/js/option-popup.js"></script>
-  </head>
 
-  <body>
-    <div id='dma-logo-cont'></div>
-    <div id="container">
-        <form id='google-chrome-options'>
-            <fieldset class="dma-darknightmode-block">
-                <label class='dnm-chrome-action-label dark1'>DARK NIGHT</label>
-                <label class='dnm-chrome-action-label mode1'>MODE</label>
-                <div class="switch-toggle switch-3 switch-candy dnm-chrome-action-div">
-                    <input id="on" name="mode_status" type="radio" checked="" value='off' class='mode-status-radio'>
-                    <label for="on" >Off</label>
-                    <input id="na" name="mode_status" type="radio" checked="checked" value='auto' class='mode-status-radio'>
-                    <label for="na" >Auto</label>
-                    <input id="off" name="mode_status" type="radio" value='on' class='mode-status-radio'>
-                    <label for="off" >On</label>
-                    <a></a>
-                </div>
-                <span id='intro-text-div' class='intro-text' style="display:none;">
-                    Auto mode automatically switches on the Dark Night Mode after 8:00 pm your local time and switches of after 6:00 am.
-                </span>
-            </fieldset>
-            <fieldset class="bright1">
-                <label class='dnm-chrome-action-label dnm-sllbl bright1'>BRIGHTNESS</label>
-                <span id='dnm-status-slider-update' class='dnm-chrome-slider-stt'>5% brighter</span>
-                <div class='dnm-chrome-action-div br2'>
-                    <div id='dnm-brightness-slider'>
-                        <input id='dnm-brightness-option' type="range" min="11" step='1' max="100" data-rangeSlider>
-                        <span class="dma-popup-vertical-line"></span>
+    <!-- Include JavaScript files for functionality -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/bootstrap.js"></script>
+
+    <!-- Include CSS files for styling -->
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <!-- Include the navigation template -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Main content container -->
+    <main role="main" class="container">
+        <!-- Main content -->
+        <div id='dma-logo-cont'></div>
+        <div id="container">
+            <form id='google-chrome-options'>
+                <fieldset class="dma-darknightmode-block">
+                    <div class="switch-toggle switch-3 switch-candy dnm-chrome-action-div">
+                        <input id="on" name="mode_status" type="radio" checked="" value='off' class='mode-status-radio'>
+                        <label for="on">Off</label>
+                        <input id="na" name="mode_status" type="radio" checked="checked" value='auto'
+                            class='mode-status-radio'>
+                        <label for="na">Auto</label>
+                        <input id="off" name="mode_status" type="radio" value='on' class='mode-status-radio'>
+                        <label for="off">On</label>
+                        <a></a>
                     </div>
-                    <div id='dnm-brightness-status' data-balloon="Lock it if you want brightness adjustment to be ON even when darkmode is OFF." data-balloon-pos="left"></div>
+                    <span id='intro-text-div' class='intro-text' style="display:none;">
+                        Auto mode automatically switches on the Dark Night Mode after 8:00 pm your local time and
+                        switches
+                        of after 6:00 am.
+                    </span>
+                </fieldset>
+                <fieldset class="bright1">
+                    <label class='dnm-chrome-action-label dnm-sllbl bright1'>BRIGHTNESS</label>
+                    <span id='dnm-status-slider-update' class='dnm-chrome-slider-stt'>5% brighter</span>
+                    <div class='dnm-chrome-action-div br2'>
+                        <div id='dnm-brightness-slider'>
+                            <input id='dnm-brightness-option' type="range" min="11" step='1' max="100" data-rangeSlider>
+                            <span class="dma-popup-vertical-line"></span>
+                        </div>
+                        <div id='dnm-brightness-status'
+                            data-balloon="Lock it if you want brightness adjustment to be ON even when darkmode is OFF."
+                            data-balloon-pos="left"></div>
+                    </div>
+                </fieldset>
+                <div id='dnm-brightness-warning'>
+                    <b>Warning:</b>
+                    <span>Too high brightness may distort colors</span>
                 </div>
-            </fieldset>
-            <div id='dnm-brightness-warning'>
-                <b>Warning:</b>
-                <span>Too high brightness may distort colors</span>
-            </div>
-            <fieldset class='dmn-side-on-on whitelist1'>
-                <span id='dnm-brightness-option-label-text' class='dnm-chome-custom-left'>
-                    <label class='dnm-chrome-action-label'>WHITELIST THIS SITE?</label>
-                    <p id='dnm-website-text' class='dnm-website-text'>google.com</p>
-                </span>
-                <div class='dnm-chrome-action-div dmn-'>
-                    <label class="switch">
-                        <input type="checkbox" id='dmn-whitelist-checkbox'>
-                        <span class="slider round"></span>
-                    </label>
+                <fieldset class='dmn-side-on-on whitelist1'>
+                    <span id='dnm-brightness-option-label-text' class='dnm-chome-custom-left'>
+                        <label class='dnm-chrome-action-label'>WHITELIST THIS SITE?</label>
+                        <p id='dnm-website-text' class='dnm-website-text'>google.com</p>
+                    </span>
+                    <div class='dnm-chrome-action-div dmn-'>
+                        <label class="switch">
+                            <input type="checkbox" id='dmn-whitelist-checkbox'>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </fieldset>
+                <div class="dma-suggestion">
+                    <p class="dma-suggestion-text">
+                        <span class="dma-suggestion-head">Suggestion :</span>
+                        <span id='dma-suggestions-text-content'></span>
+                    </p>
                 </div>
-            </fieldset>
-            <div class="dma-suggestion">
-                <p class="dma-suggestion-text">
-                    <span class="dma-suggestion-head">Suggestion :</span>
-                    <span id='dma-suggestions-text-content'></span>
-                </p>
-            </div>
-            <div class="dma-foot">
-                <div class="dma-setting">
-                    <a class="dma-ico dma-settings-ico" href="options.html" target="_blank"></a>
-                </div>
-                <a class="dma-report" href="https://darknightmode.com/report" target="_blank">
-                  <span class="dma-foot-text">Report</span>
-                </a>
-                <a class="dma-donate" href="https://darknightmode.com/donate" target="_blank">
-                  <span class="dma-foot-text">Donate</span>
-                </a>
-                <div class="dma-help">
-                  <a class="dma-ico dma-help-ico" href="https://darknightmode.com/FAQs" target="_blank"></a>
-                </div>
-            </div>
-        </form>
-    </div>
-  </body>
+            </form>
+        </div>
+    </main>
+
+    <!-- Include the footer template -->
+    <div id="footer-placeholder"></div>
+</body>
+
 </html>
