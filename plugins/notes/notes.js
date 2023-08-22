@@ -100,4 +100,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const notes = result.notes;
     displayNotes(notes);
   });
+
+  // Allowing pressing of enter key to save note
+  var shiftPressed = false;
+  noteInput.addEventListener("keydown", function (event) {
+    if (event.code === "Enter" && !shiftPressed) {
+      event.preventDefault();
+      saveButton.click();
+    }
+    else if (event.code === "ShiftLeft" || event.code === "RightLeft") {
+      shiftPressed = true;
+    }
+  });
+
+  noteInput.addEventListener("keyup", function (event) {
+    if (event.code === "ShiftLeft" || event.code === "RightLeft") {
+      shiftPressed = false;
+    }
+  });
 });
